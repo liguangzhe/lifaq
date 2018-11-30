@@ -6,12 +6,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Questions
-
+                        <a class="btn btn-primary float-right" href="{{ route('questions.create') }}">
+                            create a question.
+                        </a>
 
                         <div class="card-body">
 
                             <div class="card-deck">
-                                @foreach($questions as $question)
+                                @forelse($questions as $question)
                                     <div class="col-sm-4 d-flex align-items-stretch">
                                         <div class="card mb-3 ">
                                             <div class="card-header">
@@ -26,7 +28,7 @@
                                             <div class="card-footer">
                                                 <p class="card-text">
 
-                                                    <a class="btn btn-primary float-right" href="{{ route('question.show', ['id' => $question->id]) }}">
+                                                    <a class="btn btn-primary float-right" href="{{ route('questions.show', ['id' => $question->id]) }}">
                                                         View
                                                     </a>
                                                 </p>
@@ -34,11 +36,13 @@
                                         </div>
                                     </div>
 
-                                @endforeach
+                                @empty
 
+                                        There is no question, you can create a question.
 
+                                @endforelse
                             </div>
-
+                        </div>
                         </div>
                         <div class="card-footer">
                             <div class="float-right">
