@@ -31,6 +31,7 @@ class QuestionController extends Controller
     {
         $question = new Question;
         $edit = FALSE;
+        flash('something is ok!');
         return view('questionForm', ['question' => $question,'edit' => $edit  ]);
     }
     /**
