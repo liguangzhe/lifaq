@@ -16,4 +16,7 @@ class Question extends Model
 
         return $this->hasMany('App\Answer');
     }
+    public function comment(){
+        return $this->hasMany('App\Comment');
+    }
 }

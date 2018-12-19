@@ -17,10 +17,17 @@
                         <a class="btn btn-primary float-right" href="{{ route('answers.edit',['question_id'=> $question, 'answer_id'=> $answer->id, ])}}">
                             Edit Answer
                         </a>
+                        <a class="btn btn-primary float-right"  href="{{ route('comments.create', ['answer_id'=> $answer->id])}}">
+                            Comment Answer
+                        </a>
                     </div>
                 </div>
 
             </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+
         </div>
     </div>
 @endsection
